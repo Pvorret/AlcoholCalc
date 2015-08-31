@@ -26,5 +26,10 @@ namespace AlcoholCalculator
 
             
         }
+
+        public void Login()
+        {
+
+        }
     }
 }

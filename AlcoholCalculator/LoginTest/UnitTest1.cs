@@ -5,6 +5,17 @@ using System.Diagnostics;
 
 namespace LoginTest
 {
+    public class FakeStorage : Login.IStorage
+    {
+        public void CreateUser(string userName, string password)
+        {
+            if (userName.Equals("Pvorret"))
+            {
+                throw new Exception("Name already Exists");
+            }
+        }
+    }
+
     [TestClass]
     public class UnitTest1
     {
@@ -40,6 +51,13 @@ namespace LoginTest
                 response = "No";
             }
             Assert.AreEqual("You need input a better UserName or Password", response);
+
+        }
+        [TestMethod]
+        public void U_Login_CreateUser_UserAlreadyExist()
+        {
+
+
 
         }
         [TestMethod]

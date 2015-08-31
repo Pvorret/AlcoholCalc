@@ -13,11 +13,7 @@ namespace Login
         private string _userName;
         private string _password;
         public Dictionary<string, string> _users;
-
-        public Login()
-        {
-
-        }
+        
         public Login(Person.Person p)
         {
             _users = new Dictionary<string, string>();
@@ -36,7 +32,9 @@ namespace Login
                 }
                 else
                 {
-                    response = "You need input a better UserName or Password";
+                    response = "You need input a better UserName or Password"; 
+                    //Man kunne evt have brugt try catch. 
+                    //Så hvis det ikke kan lade sig gøre, skulle den smide en exception
                 } 
             }
             else
